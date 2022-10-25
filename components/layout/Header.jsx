@@ -3,16 +3,25 @@ import Logo from "../ui/Logo";
 import { FaUserAlt, FaShoppingCart, FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import Search from "../ui/Search";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const [isMenuModal, setIsMenuModal] = useState(false);
+
+  const router = useRouter();
+  console.log(router.asPath);
+
   return (
-    <div className="h-[5.5rem] bg-secondary">
+    <div
+      className={`h-[5.5rem] z-50 relative ${
+        router.asPath === "/" ? "bg-transparent" : "bg-secondary"
+      }`}
+    >
       <div className="container mx-auto text-white flex justify-between items-center h-full">
         <Logo />
         <nav
-          className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-full sm:text-white text-black sm:bg-transparent bg-white sm:flex hidden ${
+          className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-screen sm:text-white text-black sm:bg-transparent bg-white sm:flex hidden ${
             isMenuModal === true && "!grid place-content-center"
           }`}
         >
@@ -50,7 +59,9 @@ const Header = () => {
             <FaSearch className="hover:text-primary transition-all" />
           </button>
           <a href="#">
-            <button className="md:inline-block hidden sm">Order Online</button>
+            <button className="md:inline-block hidden sm btn-primary ">
+              Order Online
+            </button>
           </a>
           <button
             className="sm:hidden inline-block"
