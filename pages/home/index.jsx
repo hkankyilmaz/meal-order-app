@@ -3,6 +3,7 @@ import Carousel from "../../components/Corousel";
 import About from "../../components/About";
 import Campaigns from "../../components/Campaigns";
 import MenuWrapper from "../../components/product/MenuWrapper";
+import Reservation from "../../components/Reservation";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
       <Campaigns />
       <MenuWrapper />
       <About />
+      <Reservation />
     </div>
   );
 };
