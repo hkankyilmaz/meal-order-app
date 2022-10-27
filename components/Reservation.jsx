@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./form/Input";
 import { useFormik } from "formik";
 import Title from "./ui/Title";
-import { reservationSchema } from "../schema/reservation";
+import { reservationSchema } from "../scheme/reservatiob";
 
 const Reservation = () => {
   const onSubmit = async (values, actions) => {
@@ -47,8 +47,8 @@ const Reservation = () => {
       type: "email",
       placeholder: "Your Email Address",
       value: values.email,
-      errorMessage: errors.persons,
-      touched: touched.persons,
+      errorMessage: errors.email,
+      touched: touched.email,
     },
     {
       id: 4,
@@ -65,6 +65,8 @@ const Reservation = () => {
       type: "datetime-local",
       placeholder: "How Many Persons?",
       value: values.date,
+      errorMessage: errors.date,
+      touched: touched.date,
     },
   ];
   return (
