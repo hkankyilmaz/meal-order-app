@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import Link from "next/link";
 import Input from "../../components/form/Input";
 import Title from "../../components/ui/Title";
-import { loginSchema } from "../../scheme/login";
+import { loginSchema } from "../../schema/login";
 
 const Login = () => {
   const onSubmit = async (values, actions) => {
