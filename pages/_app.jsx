@@ -1,12 +1,13 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Layout from "../layout/Layout";
-import "../styles/globals.css";
 
-import { SessionProvider } from "next-auth/react";
+import "../styles/globals.css";
+import Layout from "../layout/Layout";
 
 import { Provider } from "react-redux";
 import store from "../redux/store";
+
+import { SessionProvider } from "next-auth/react";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
@@ -19,4 +20,5 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     </SessionProvider>
   );
 }
+
 export default MyApp;

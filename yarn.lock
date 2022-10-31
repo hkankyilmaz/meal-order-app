@@ -732,6 +732,11 @@
   "resolved" "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   "version" "1.2.1"
 
+"@next-auth/mongodb-adapter@^1.1.1":
+  "integrity" "sha512-X5O4U4l2M8nyp/B3qF5GOr/JJw2ShKgWfTZRa80Y5CUzTPPmf09ggL5v5UwCmz9l2RIv2GUxO8hK4qrcaZvDRw=="
+  "resolved" "https://registry.npmjs.org/@next-auth/mongodb-adapter/-/mongodb-adapter-1.1.1.tgz"
+  "version" "1.1.1"
+
 "@next/env@12.3.1":
   "integrity" "sha512-9P9THmRFVKGKt9DYqeC2aKIxm8rlvkK38V1P1sRE7qyoPBIs8l9oo79QoSdPtOWfzkbDAVUqvbQGgTMsb8BtJg=="
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.3.1.tgz"
@@ -2398,7 +2403,7 @@
     "@types/whatwg-url" "^8.2.1"
     "whatwg-url" "^11.0.0"
 
-"mongodb@4.11.0":
+"mongodb@^4.1.1", "mongodb@^4.11.0", "mongodb@4.11.0":
   "integrity" "sha512-9l9n4Nk2BYZzljW3vHah3Z0rfS5npKw6ktnkmFgTcnzaXH1DRm3pDl6VMHu84EVb1lzmSaJC4OzWZqTkB5i2wg=="
   "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-4.11.0.tgz"
   "version" "4.11.0"
@@ -2471,7 +2476,7 @@
   "resolved" "https://registry.npmjs.org/negotiator/-/negotiator-0.6.3.tgz"
   "version" "0.6.3"
 
-"next-auth@^4.15.0":
+"next-auth@^4", "next-auth@^4.15.0":
   "integrity" "sha512-IasNzGLM2VlmyioDdZaRwBBBm8b5xo+zbbqVWHFh0bY6iQUZ3vuudrsdHNdxkXV3LSHdKNaoWEpYr4BydB7mCw=="
   "resolved" "https://registry.npmjs.org/next-auth/-/next-auth-4.15.0.tgz"
   "version" "4.15.0"
