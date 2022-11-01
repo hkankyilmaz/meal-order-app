@@ -1,7 +1,13 @@
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "../../../util/mango";
+import User from "../../../models/User";
+import dbConnect from "../../../util/dbConnect";
+import bcrypt from "bcryptjs";
+
+dbConnect();
 
 const authOptions = {
   // Configure one or more authentication providers
