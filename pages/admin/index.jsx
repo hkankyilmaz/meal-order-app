@@ -1,5 +1,5 @@
-import { useFormik } from "formik";
 import axios from "axios";
+import { useFormik } from "formik";
 import Link from "next/link";
 import Input from "../../components/form/Input";
 import Title from "../../components/ui/Title";
@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
 const Login = () => {
+  const { push } = useRouter();
+
   const onSubmit = async (values, actions) => {
     try {
       const res = await axios.post(
@@ -87,6 +89,18 @@ const Login = () => {
 
 export const getServerSideProps = (ctx) => {
   const myCookie = ctx.req?.cookies || "";
+  if (myCookie.token === process.env.ADMIN_TOKEN) {
+    return {
+      redirect: {
+        destination: "/admin/profile",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 };
 
 export default Login;

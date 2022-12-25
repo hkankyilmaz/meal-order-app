@@ -2,18 +2,16 @@ import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
-import clientPromise from "../../../util/mango";
+import clientPromise from "../../../util/mongo";
 import User from "../../../models/User";
 import dbConnect from "../../../util/dbConnect";
 import bcrypt from "bcryptjs";
-
 dbConnect();
 
-const authOptions = {
-  // Configure one or more authentication providers
+export default NextAuth({
+  /*  adapter: MongoDBAdapter(clientPromise), */
   providers: [
     GithubProvider({
-      adapter: MongoDBAdapter(clientPromise),
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
@@ -40,10 +38,9 @@ const authOptions = {
   pages: {
     signIn: "/auth/login",
   },
-  adapter: MongoDBAdapter(clientPromise),
   database: process.env.MONGODB_URI,
   secret: "secret",
-};
+});
 
 const signInUser = async ({ user, password }) => {
   const isMAtch = await bcrypt.compare(password, user.password);
@@ -52,5 +49,3 @@ const signInUser = async ({ user, password }) => {
   }
   return user;
 };
-
-export default NextAuth(authOptions);

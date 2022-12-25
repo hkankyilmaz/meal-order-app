@@ -1,17 +1,17 @@
 import React from "react";
-import Carousel from "../../components/Corousel";
 import About from "../../components/About";
-import Customers from "../../components/customers/Customers";
 import Campaigns from "../../components/Campaigns";
+import Carousel from "../../components/Carousel";
+import Customers from "../../components/customers/Customers";
 import MenuWrapper from "../../components/product/MenuWrapper";
 import Reservation from "../../components/Reservation";
 
-const Index = () => {
+const Index = ({ categoryList, productList }) => {
   return (
     <React.Fragment>
       <Carousel />
       <Campaigns />
-      <MenuWrapper />
+      <MenuWrapper categoryList={categoryList} productList={productList} />
       <About />
       <Reservation />
       <Customers />

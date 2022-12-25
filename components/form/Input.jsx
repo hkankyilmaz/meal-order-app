@@ -2,11 +2,11 @@ import React from "react";
 
 const Input = (props) => {
   const { type, errorMessage, touched, placeholder, ...inputProps } = props;
+
   return (
     <div className="w-full">
       <label className="relative block cursor-text w-full">
         <input
-          autoComplete="off"
           type={type}
           className={`h-14 w-full border outline-none px-4 peer 
           ${type !== "datetime-local" && "pt-2"}
